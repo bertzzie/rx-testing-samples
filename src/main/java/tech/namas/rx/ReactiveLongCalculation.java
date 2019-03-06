@@ -20,7 +20,7 @@ class ReactiveLongCalculation {
 
     Observable<String> timeSensitiveCalculation(Long seed, Scheduler scheduler) {
         return Observable.interval(1, TimeUnit.DAYS, scheduler)
-                         .map(i -> Long.valueOf(seed + i).toString())
+                         .map(i -> seed + i)
                          .map(Object::toString);
     }
 }
